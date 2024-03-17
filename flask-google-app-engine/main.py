@@ -19,6 +19,10 @@ def core():
 def add(a, b):
     return str(float(a) + float(b))
 
+@app.route('/square/<a>/<b>')
+def square(a, b=2):
+    return str(float(a)**float(b))
+
 @app.route('/area')
 def myarea():
   altura = request.args.get('altura', default = 0, type = float)
